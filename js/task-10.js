@@ -13,16 +13,16 @@ controlsRef.addEventListener("change", getValueOfInput);
 
 function createBoxes(amount) {
   let sizeValue = 20;
-  let newDiv = "";
+  boxesForNewElements.innerHTML = "";
   for (let i = 0; i < amount; i += 1) {
     sizeValue += 10;
-    newDiv = document.createElement("div");
+    let newDiv = document.createElement("div");
     newDiv.style.backgroundColor = getRandomHexColor();
     newDiv.style.width = sizeValue + "px";
     newDiv.style.height = sizeValue + "px";
     newDiv.style.border = "1px solid black";
+    boxesForNewElements.append(newDiv);
   }
-  boxesForNewElements.appendChild(newDiv);
 }
 
 function destroyBoxes() {
@@ -42,7 +42,5 @@ function getValueOfInput(event) {
   if (event.target.nodeName === "INPUT") {
     let valueOfInput = event.target.value;
     bottonAction(valueOfInput);
-
-    console.log(valueOfInput);
   }
 }
