@@ -13,7 +13,11 @@ function onFormSubmit(evt) {
     return alert("Всі поля форми повинні бути заповнені");
   }
 
-  console.log(`Email: ${email.value}, password: ${password.value}`);
+  let obj = {};
+  obj.Email = email.value;
+  obj.password = password.value;
+
+  console.log(obj);
 
   evt.currentTarget.reset();
 }

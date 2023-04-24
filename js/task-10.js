@@ -8,6 +8,7 @@ const controlsRef = document.getElementById("controls");
 const btnCreate = document.querySelector("[data-create]");
 const btnDestroy = document.querySelector("[data-destroy]");
 const boxesForNewElements = document.getElementById("boxes");
+const fragment = document.createDocumentFragment();
 
 controlsRef.addEventListener("change", getValueOfInput);
 
@@ -21,8 +22,9 @@ function createBoxes(amount) {
     newDiv.style.width = sizeValue + "px";
     newDiv.style.height = sizeValue + "px";
     newDiv.style.border = "1px solid black";
-    boxesForNewElements.append(newDiv);
+    fragment.append(newDiv);
   }
+  boxesForNewElements.append(fragment);
 }
 
 function destroyBoxes() {
